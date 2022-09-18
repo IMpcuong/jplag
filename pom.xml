@@ -74,16 +74,15 @@
 
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <spotless.version>2.24.1</spotless.version>
-        <slf4j.version>1.7.36</slf4j.version>
+        <spotless.version>2.26.0</spotless.version>
+        <slf4j.version>2.0.0</slf4j.version>
         <junit.version>5.9.0</junit.version>
 
         <antlr2.version>2.7.7</antlr2.version>
-        <antlr3.version>3.5</antlr3.version>
-        <antlr4.version>4.10.1</antlr4.version>
-        <emf.version>2.27.0</emf.version>
-        <emf.ecore.version>2.25.0</emf.ecore.version>
-        <emf.ecore.xmi.version>2.16.0</emf.ecore.xmi.version>
+        <antlr4.version>4.11.1</antlr4.version>
+        <emf.version>2.28.0</emf.version>
+        <emf.ecore.version>2.26.0</emf.ecore.version>
+        <emf.ecore.xmi.version>2.17.0</emf.ecore.xmi.version>
 
         <!-- The Revision of JPlag -->
         <revision>4.0.0-SNAPSHOT</revision>
@@ -108,19 +107,16 @@
                 <version>${antlr4.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.antlr</groupId>
-                <artifactId>antlr3</artifactId>
-                <version>${antlr3.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.antlr</groupId>
-                <artifactId>antlr3-runtime</artifactId>
-                <version>${antlr3.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>net.sourceforge.argparse4j</groupId>
                 <artifactId>argparse4j</artifactId>
                 <version>0.9.0</version>
+            </dependency>
+
+            <!-- CoreNLP -->
+            <dependency>
+                <groupId>edu.stanford.nlp</groupId>
+                <artifactId>stanford-corenlp</artifactId>
+                <version>4.5.1</version>
             </dependency>
 
             <!-- LOGGER -->
@@ -134,87 +130,16 @@
                 <artifactId>slf4j-simple</artifactId>
                 <version>${slf4j.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.kohsuke.metainf-services</groupId>
+                <artifactId>metainf-services</artifactId>
+                <version>1.9</version>
+            </dependency>
 
-            <!-- JPLAG -->
             <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>text</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>java</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>python-3</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>csharp-6</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>cpp</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>golang</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>kotlin</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>rlang</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>scala</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>scheme</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>emf-metamodel</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>emf-metamodel-dynamic</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>frontend-utils</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>frontend-testutils</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>endToEndTesting</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.jplag</groupId>
-                <artifactId>jplag</artifactId>
-                <version>${revision}</version>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.13.4</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -241,7 +166,7 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>4.7.0</version>
+            <version>4.8.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -473,23 +398,12 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <modules>
-                <module>jplag.frontend-utils</module>
-                <module>jplag.frontend-testutils</module>
-                <module>jplag.frontend.cpp</module>
-                <module>jplag.frontend.csharp-6</module>
-                <module>jplag.frontend.golang</module>
-                <module>jplag.frontend.java</module>
-                <module>jplag.frontend.kotlin</module>
-                <module>jplag.frontend.python-3</module>
-                <module>jplag.frontend.rlang</module>
-                <module>jplag.frontend.scala</module>
-                <module>jplag.frontend.scheme</module>
-                <module>jplag.frontend.text</module>
-                <module>jplag.frontend.emf-metamodel</module>
-                <module>jplag.frontend.emf-metamodel-dynamic</module>
-                <module>jplag.endToEndTesting</module>
-                <module>jplag</module>
-                <module>jplag.cli</module>
+                <module>cli</module>
+                <module>core</module>
+                <module>endtoend-testing</module>
+                <module>languages</module>
+                <module>language-api</module>
+                <module>language-testutils</module>
             </modules>
         </profile>
         <profile>
@@ -498,21 +412,10 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <modules>
-                <module>jplag.frontend-utils</module>
-                <module>jplag.frontend-testutils</module>
-                <module>jplag.frontend.cpp</module>
-                <module>jplag.frontend.csharp-6</module>
-                <module>jplag.frontend.golang</module>
-                <module>jplag.frontend.java</module>
-                <module>jplag.frontend.kotlin</module>
-                <module>jplag.frontend.python-3</module>
-                <module>jplag.frontend.rlang</module>
-                <module>jplag.frontend.scala</module>
-                <module>jplag.frontend.scheme</module>
-                <module>jplag.frontend.text</module>
-                <module>jplag.frontend.emf-metamodel</module>
-                <module>jplag.frontend.emf-metamodel-dynamic</module>
-                <module>jplag</module>
+                <module>core</module>
+                <module>languages</module>
+                <module>language-api</module>
+                <module>language-testutils</module>
             </modules>
             <build>
                 <plugins>
