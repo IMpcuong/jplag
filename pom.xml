@@ -12,7 +12,7 @@
     <url>http://jplag.de</url>
     <organization>
         <name>Karlsruhe Institute of Technology (KIT), KASTEL – Institute of Information Security and Dependability</name>
-        <url>http://www.ipd.kit.edu</url>
+        <url>https://sdq.kastel.kit.edu</url>
     </organization>
     <licenses>
         <license>
@@ -45,7 +45,7 @@
     <scm>
         <connection>scm:git:git://github.com/jplag/JPlag.git</connection>
         <developerConnection>scm:git:ssh://github.com:jplag/JPlag.git</developerConnection>
-        <url>http://github.com/jplag/JPlag/tree/master</url>
+        <url>https://github.com/jplag/JPlag/tree/master</url>
     </scm>
 
     <issueManagement>
@@ -74,9 +74,9 @@
 
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <spotless.version>2.25.0</spotless.version>
-        <slf4j.version>2.0.0</slf4j.version>
-        <junit.version>5.9.0</junit.version>
+        <spotless.version>2.27.2</spotless.version>
+        <slf4j.version>2.0.3</slf4j.version>
+        <junit.version>5.9.1</junit.version>
 
         <antlr2.version>2.7.7</antlr2.version>
         <antlr4.version>4.11.1</antlr4.version>
@@ -85,7 +85,7 @@
         <emf.ecore.xmi.version>2.17.0</emf.ecore.xmi.version>
 
         <!-- The Revision of JPlag -->
-        <revision>4.0.0-SNAPSHOT</revision>
+        <revision>4.0.1-SNAPSHOT</revision>
     </properties>
 
     <dependencyManagement>
@@ -202,7 +202,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.2.2</version>
+                    <version>3.3.0</version>
                     <configuration>
                         <archive>
                             <manifest>
